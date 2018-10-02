@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: container-registry-service
+  namespace: $(kubernetes-namespace)
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: container-registry-service
+  template:
+    metadata:
+      labels:
+        app: container-registry-service
+    spec:
+      containers:
+      - name: container-registry-service
+        image: 579478677147.dkr.ecr.eu-central-1.amazonaws.com/container-registry-service:$(Build.BuildId)
+        ports:
+        - containerPort: 80
+          name: web
