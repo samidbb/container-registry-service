@@ -8,7 +8,7 @@ set -eu -o pipefail
 
 # build parameters
 readonly REGION=${AWS_DEFAULT_REGION:-"eu-central-1"}
-readonly IMAGE_NAME='container-registry-service'
+readonly IMAGE_NAME='ded/container-registry-service'
 readonly BUILD_NUMBER=${1:-"N/A"}
 readonly BUILD_SOURCES_DIRECTORY=${2:-${PWD}}
 readonly SOLUTION_NAME='ContainerRegistry.sln';
