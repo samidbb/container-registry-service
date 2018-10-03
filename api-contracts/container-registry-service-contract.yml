@@ -1,0 +1,42 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: 'Container repository'
+  description: 'A API giving acces to our container registry'
+host: localhost
+basePath: /
+schemes:
+ - http
+
+paths: 
+  /repositories:
+    get:
+      summary: 'Returns a list of repoistories'
+      responses:
+        200:
+          description: 'OK'
+          schema:
+            $ref: '#/definitions/repository-list'
+    
+    post:
+      description: 'Creates a new container repository'
+      responses:
+        200:
+          description: 'OK - repository created'
+          schema:
+            $ref: '#/definitions/repository'
+
+definitions:
+  repository:
+    type: object
+    properties:
+      id:
+        type: string
+  
+  repository-list:
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: "#/definitions/repository"
