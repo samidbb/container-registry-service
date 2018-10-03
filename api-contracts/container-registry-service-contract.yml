@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   version: '1.0.0'
   title: 'Container repository'
-  description: 'A API giving acces to our container registry'
+  description: 'A API giving access to our container registry'
 host: localhost
 basePath: /
 schemes:
